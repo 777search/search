@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Roulette</title>
+    <script src="./search.js"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <h1>Search Roulette</h1>
+    <p>Search on a random, privacy friendly search engine!</p>
+    <div id=searchbox>
+        <form onsubmit="event.preventDefault();search(queryfield.value)">
+            <input id=queryfield placeholder="What is CSS?" autocomplete="on" required></input>
+            <br>
+            <button type=submit>Search</button>
+        </form>
+        <details>
+            <summary>Learn more</summary>
+            <h2>What's this?</h2>
+            <p>
+                This is a search engine that redirects your search to a random search engine.<br>
+                This limits what each search engine could learn about you.<br>
+                At the very least, this lets you experience different search engines!<br>
+            </p>
+
+
+            <h3>!bangs</h3>
+            <p>DuckDuckGo's famous !bangs partly work here.</p>
+
+            <h3>We do not see your search queries!</h3>
+            <p>
+                The search query is only ever saved in the URLs <code>hash</code> which the server does not see, but the
+                Browser does.<br>
+                This site's JavaScript just reads it and builds a link to another search engine.<br>
+                This means we literally do not even see your searches!
+            </p>
+        </details>
+    </div>
+</body>
+
+</html>

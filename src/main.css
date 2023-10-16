@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 16px;
+}
+
+#searchbox {
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+#queryfield {
+    padding: 15px;
+    font-size: 18px;
+    width: 95%;
+}
+
+button {
+    margin-top: 7px;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    #searchbox {
+        width: 90%;
+    }
+}
