@@ -4,11 +4,16 @@ let engines = [
 	"https://www.ecosia.org/search?q=%s",
 	"https://metager.org/meta/meta.ger3?eingabe=%s",
 	"https://www.startpage.com/sp/search?q=%s",
+	"https://swisscows.com/web?query=%s",
+	"https://search.brave.com/search?q=%s",
 ]
 
 let bangs = {
-	"yt": "https://www.youtube.com/results?search_query=%s",
-	"g": "https://www.google.com/search?q=%s"
+	"yt":	"https://www.youtube.com/results?search_query=%s",
+	"g":	"https://www.google.com/search?q=%s",
+	"hn":	"https://hn.algolia.com/?query=%s",
+	"sp":	"https://www.startpage.com/sp/search?q=%s",
+	"a":	"https://www.amazon.com/s?k=%s",
 }
 
 function search(q) {
@@ -27,8 +32,9 @@ function handleBangs(q) {
 		matches = q.match(/ ?[a-z]+! ?/)//bang!
 	}
 	if (matches != null && matches[0] != null) {
-		if (new RegExp('"[^"]*' + matches[0] + '[^"]*"').test(q) === true)  {
+		if (new RegExp('"[^"]*' + matches[0] + '[^"]*"').test(q) === true) {
 			// prevent quoted bangs from working
+			// works in most cases
 			return false
 		}
 		let match = matches[0]
