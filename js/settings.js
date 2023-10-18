@@ -20,6 +20,7 @@ function saveCustomEngines() {
         alert("Error: there should be a %s in every line")
     } else {
         localStorage.setItem("customengines", customengines.join("\n"))
+        alert("saved!")
     }
 }
 

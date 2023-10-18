@@ -14,4 +14,7 @@ let bangs = {
 	"hn": "https://hn.algolia.com/?query=%s",
 	"sp": "https://www.startpage.com/sp/search?q=%s",
 	"a": "https://www.amazon.com/s?k=%s",
+	"ass": "https://kagi.com/assistant?q=%s",
+	"ddg": "https://duckduckgo.com/?q=%s",
+	"gi": "https://www.google.com/search?tbm=isch&q=%s"
 }
