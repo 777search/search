@@ -2,6 +2,7 @@ function toggleCustomEngines() {
     let enabled = usecustomenginesbox.checked
     customenginetextarea.disabled = !enabled
     customenginesavebutton.disabled = !enabled
+    customenginesdiv.hidden = !enabled
     if (!enabled)
         localStorage.removeItem("customengines")
 }
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         usecustomenginesbox.checked = true
         customenginetextarea.disabled = false
         customenginesavebutton.disabled = false
+        customenginesdiv.hidden = false
 	} else {
         customenginetextarea.value = engines.join("\n")
     }
