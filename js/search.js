@@ -1,21 +1,3 @@
-let engines = [
-	"https://duckduckgo.com/?q=%s",
-	"https://www.qwant.com/?q=%s",
-	"https://www.ecosia.org/search?q=%s",
-	"https://metager.org/meta/meta.ger3?eingabe=%s",
-	"https://www.startpage.com/sp/search?q=%s",
-	"https://swisscows.com/web?query=%s",
-	"https://search.brave.com/search?q=%s",
-]
-
-let bangs = {
-	"yt":	"https://www.youtube.com/results?search_query=%s",
-	"g":	"https://www.google.com/search?q=%s",
-	"hn":	"https://hn.algolia.com/?query=%s",
-	"sp":	"https://www.startpage.com/sp/search?q=%s",
-	"a":	"https://www.amazon.com/s?k=%s",
-}
-
 function search(q) {
 	if (q == null || q == undefined) {
 		return
@@ -49,6 +31,12 @@ function handleBangs(q) {
 }
 
 // on page load
+
+let customengines = localStorage.getItem("customengines")
+if (customengines != null && customengines.length > 0) {
+	engines = customengines.split("\n")
+}
+
 let params = new URLSearchParams(location.hash.substr(1))
 let query = params.get("q") // this is done to pass more  arguments in the future
 

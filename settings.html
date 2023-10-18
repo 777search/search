@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search Roulette - 777search</title>
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="search" type="application/opensearchdescription+xml"
+        href="https://777search.github.io/search/opensearch.xml" title="Search Roulette">
+    <script src="./js/defaults.js"></script>
+    <script src="./js/settings.js"></script>
+</head>
+
+<body>
+    <h1>Search Roulette Settings</h1>
+    <a href="./index.html">🏠</a>
+
+    <div id="settings">
+        <input id="usecustomenginesbox" type="checkbox" onchange="toggleCustomEngines()">
+        <label for="usecustomenginesbox">Use custom search engines</label><br>
+        <p>
+            One search engine per line, <code>%s</code> is replaced by the search term.<br>
+            Be careful here. Disable and reload if things break!
+        </p>
+        <textarea id="customenginetextarea" disabled rows="10"></textarea>
+        <button id="customenginesavebutton" disabled onclick="saveCustomEngines()">Save</button>
+    </div>
+</body>
+
+</html>

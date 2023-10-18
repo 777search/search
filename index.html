@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <title>Search Roulette - 777search</title>
     <meta name="referrer" content="no-referrer">
-    <script src="./search.js"></script>
+    <script src="./js/defaults.js"></script>
+    <script src="./js/search.js"></script>
     <link rel="stylesheet" href="./main.css">
     <link rel="search" type="application/opensearchdescription+xml"
         href="https://777search.github.io/search/opensearch.xml" title="Search Roulette">
-    <script src="./extras.js"></script>
+    <script src="./js/extras.js"></script>
 </head>
 
 <body>
@@ -18,9 +19,10 @@
         <p>Search on a random, privacy friendly search engine!</p>
         <div id=searchbox>
             <form onsubmit="event.preventDefault();search(queryfield.value)">
-                <input id=queryfield placeholder="What is CSS?" autocomplete="on" required autofocus></input>
+                <input id=queryfield placeholder="How to center a div?" autocomplete="on" required autofocus></input>
                 <br>
-                <button type=submit>Search</button>
+                <button id=searchbutton type=submit>Search</button>
+                <a href="./settings.html" id="settingslink">⚙</a>
             </form>
         </div>
 
@@ -34,9 +36,8 @@
             This is a search engine that redirects your search to a random search engine.<br>
             This limits what each search engine could learn about you.<br>
             At the very least, this lets you experience different search engines!<br>
-            We currently support
-            <script>document.write(engines.length)</script> different search engines,
-            including DuckDuckGo, MetaGer, Startpage and more.
+            Currently,
+            <script>document.write(engines.length)</script> different search engines are included.
         </p>
 
         <h3>We do not see your search queries!</h3>
@@ -56,6 +57,12 @@
             In Firefox, you can click the URL bar and at the bottom add "Search Roulette", then select it as default
             in the settings.<br>
             In other browsers, use <code>https://777search.github.io/search/#q=%s</code>.
+        </p>
+
+        <h3>Customizable</h3>
+        <p>
+            You can edit the list of search engines. Don't like swisscows? Remove it. You'd like to use 10 different
+            SearXNG instances? Do it!
         </p>
 
         <h3>Public Domain</h3>
